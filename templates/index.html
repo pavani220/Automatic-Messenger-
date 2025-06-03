@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WhatsApp Bulk Sender</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .main-heading {
+            margin-top: 30px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #075e54;
+        }
+
+        .container {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            margin-top: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #075e54;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            resize: vertical;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #25d366;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1ebc5c;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .marquee {
+            margin-top: 30px;
+            width: 100%;
+            background: #075e54;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .marquee a {
+            color: #fff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-heading">Vurimi AI Global Services</div>
+
+    <div class="container">
+        <h2>📤 WhatsApp Bulk Sender</h2>
+        <form action="/send" method="post">
+            <label>Phone Numbers :</label>
+            <textarea name="numbers" rows="6" required placeholder="Enter Phone Numbers"></textarea>
+
+            <label>Message:</label>
+            <textarea name="message" rows="4" required placeholder="Enter your message here..."></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+        <div class="footer">
+            &copy; 2025 Vurimi AI Global Services
+        </div>
+    </div>
+
+    <div class="marquee">
+        <marquee behavior="scroll" direction="left">
+            <a href="https://vurimi.com" target="_blank">Visit Vurimi AI Global Services Official Website</a>
+        </marquee>
+    </div>
+
+</body>
+</html>
+
+

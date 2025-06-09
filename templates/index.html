@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>WhatsApp Bulk Sender</title>
+    <title>Vurimi AI Global Services</title>
     <style>
+
         body {
             font-family: 'Segoe UI', sans-serif;
             background: #f0f2f5;
@@ -44,7 +45,7 @@
             display: block;
         }
 
-        textarea {
+        textarea, input[type="text"] {
             width: 100%;
             padding: 10px;
             margin-bottom: 20px;
@@ -90,24 +91,57 @@
             color: #fff;
             text-decoration: underline;
         }
+
+        .drafts-sidebar {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.08);
+            padding: 20px;
+            min-width: 180px;
+            max-width: 220px;
+        }
+
+        .draft-item {
+            cursor: pointer;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 6px;
+            background: #f0f2f5;
+        }
+
+        .draft-item:hover {
+            background: #e2e6ea;
+        }
+
     </style>
 </head>
 <body>
 
     <div class="main-heading">Vurimi AI Global Services</div>
 
-    <div class="container">
-        <form action="/send" method="post">
-            <label>Phone Numbers :</label>
-            <textarea name="numbers" rows="6" required placeholder="Enter Phone Numbers"></textarea>
+    <div style="display: flex; width: 100%; justify-content: center; align-items: flex-start; gap: 30px; margin-top: 30px;">
+        <div class="container" style="margin-top: 0;">
+            <form action="/send" method="post">
+                <label>Name :</label>
+                <input type="text" id="name" name="name" placeholder="Enter Name" style="width:100%;padding:10px;margin-bottom:20px;border:1px solid #ccc;border-radius:8px;font-size:14px;">
 
-            <label>Message:</label>
-            <textarea name="message" rows="4" required placeholder="Enter your message here..."></textarea>
+                <label>Phone Number :</label>
+                <textarea name="numbers" rows="6" required placeholder="Enter Phone Numbers"></textarea>
 
-            <button type="submit">Send Message</button>
-        </form>
-        <div class="footer">
-            &copy; 2025 Vurimi AI Global Services
+                <label>Message :</label>
+                <textarea id="message" name="message" rows="4" required placeholder="Enter your message here..."></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="footer">
+                &copy; 2025 Vurimi AI Global Services
+            </div>
+        </div>
+        <div class="drafts-sidebar">
+            <div style="font-weight: bold; margin-bottom: 10px; color: #075e54;">Drafts</div>
+            <div class="draft-item" onclick="fillDraft('Hello, this is a reminder from Vurimi AI Global Services.')">Hello, this is a reminder from Vurimi AI Global Services.</div>
+            <div class="draft-item" onclick="fillDraft('Your appointment is scheduled for tomorrow. Please confirm your availability.')">Your appointment is scheduled for tomorrow. Please confirm your availability.</div>
+            <div class="draft-item" onclick="fillDraft('Thank you for choosing Vurimi AI Global Services!')">Thank you for choosing Vurimi AI Global Services!</div>
         </div>
     </div>
 
@@ -116,6 +150,23 @@
             <a href="https://vurimiaiglobal.com" target="_blank">Visit Vurimi AI Global Services Official Website</a>
         </marquee>
     </div>
+
+    <script>
+        function fillDraft(text) {
+            var name = document.getElementById('name').value.trim();
+            if (name) {
+
+
+                var hiMatch = text.match(/^(Hi|Hello)([,.!\s])/i);
+                if (hiMatch) {
+                    var greeting = hiMatch[1];
+                    var after = hiMatch[2];
+                    text = greeting + ' ' + name + ',' + text.slice(hiMatch[0].length);
+                }
+            }
+            document.getElementById('message').value = text;
+        }
+    </script>
 
 </body>
 </html>
